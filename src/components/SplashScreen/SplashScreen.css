@@ -1,0 +1,12 @@
+.splash-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom right, #f6f6fd, #e7e7ee);
+}
+
+.splash-screen img {
+  width: 200px; /* Adjust as needed */
+  height: auto;
+}

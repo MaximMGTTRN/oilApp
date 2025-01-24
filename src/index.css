@@ -1,0 +1,43 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* font-family: Arial, sans-serif; */
+  font-family: "Cactus Classical Serif", serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* header {
+  flex: 0 0 150px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+} */
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px; /* To avoid content being hidden under the fixed header */
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
