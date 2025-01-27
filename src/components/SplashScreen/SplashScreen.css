@@ -3,10 +3,28 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to bottom right, #f6f6fd, #e7e7ee);
+  background: linear-gradient(to bottom right, #babae7, #393967);
+  /* background: linear-gradient(to bottom right, #f6f6fd, #e7e7ee); */
 }
 
 .splash-screen img {
   width: 200px; /* Adjust as needed */
   height: auto;
+  animation: scaleUpDown 1.5s ease-in-out; /* Длительность и плавность анимации */
+
+}
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(0.8); /* Начальный размер (меньше стандартного) */
+    opacity: 0; /* Начальная прозрачность (если нужно плавное появление) */
+  }
+  50% {
+    transform: scale(1.2); /* Увеличение логотипа */
+    opacity: 1; /* Полная видимость */
+  }
+  100% {
+    transform: scale(1); /* Возврат к стандартному размеру */
+    opacity: 1; /* Остаётся видимым */
+  }
 }

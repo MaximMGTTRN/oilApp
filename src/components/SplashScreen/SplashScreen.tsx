@@ -10,4 +10,3 @@ const SplashScreen: React.FC = () => {
 };
 
 export default SplashScreen;
-
