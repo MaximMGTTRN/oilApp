@@ -1,12 +1,24 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "./PageBody.css";
-import { RouterProvider } from "react-router-dom";
-import { router } from "../../router/router";
 
-const PageBody: React.FC = () => {
+interface IPageBodyProps {
+  children: ReactNode;
+  title?: string;
+  backgroundColorProps?: string
+}
+const PageBody: React.FC<IPageBodyProps> = ({ children, title, backgroundColorProps }) => {
+  const backgroundColor = backgroundColorProps ? backgroundColorProps : '#f6f6fd'
   return (
-    <div className="page-body">
-      <RouterProvider router={router} />;
+    <div className="page-body" style={{ backgroundColor: backgroundColor }}>
+      <div className="page-body-content">
+        {title &&
+          <div className="page-body-header">
+            {title}
+          </div>}
+        <div className="page-body-children">
+          {children}
+        </div>
+      </div>
     </div>
   );
 };

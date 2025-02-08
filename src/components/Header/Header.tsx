@@ -3,18 +3,16 @@ import { Link, useLocation } from "react-router-dom";
 import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import CatalogMenu from "./CatalogMenu/ClatalogMenu";
+import { useLocationContext } from "../../context/LocationContext";
 import "./Header.css";
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [catalogOpened, setCatalogOpened] = useState(false);
-  const [url, setUrl] = useState("");
-
+  const { currentPath } = useLocationContext();
   const location = useLocation();
-  console.log(url, 123132131);
 
   useEffect(() => {
-    setUrl(location.pathname);
     setCatalogOpened(false);
   }, [location]);
 
@@ -31,7 +29,7 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isNeedBackground = url !== "/" || scrolled || catalogOpened
+  const isNeedBackground = currentPath !== "/" || scrolled || catalogOpened
 
   return (
     <header className={`header ${isNeedBackground ? "scrolled" : ""}`}>

@@ -1,0 +1,8 @@
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 350px;
+    width: 500px;
+}

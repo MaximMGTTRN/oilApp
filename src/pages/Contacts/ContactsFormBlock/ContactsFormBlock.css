@@ -1,0 +1,9 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+    width: 500px;
+    border: 1px solid black;
+}
