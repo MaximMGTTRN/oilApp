@@ -1,11 +1,12 @@
 import React from "react";
-import AppRouter from "../../router";
 import "./PageBody.css";
+import { RouterProvider } from "react-router-dom";
+import { router } from "../../router/router";
 
 const PageBody: React.FC = () => {
   return (
     <div className="page-body">
-      <AppRouter />
+      <RouterProvider router={router} />;
     </div>
   );
 };

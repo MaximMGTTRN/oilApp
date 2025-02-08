@@ -1,25 +1,21 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { RouterProvider } from "react-router-dom";
+import SplashScreen from "./components/SplashScreen/SplashScreen";
+import { router } from "./router/router";
 
-import MainLayout from "./pages/MainLayout/MainLayout";
-import {
-  createTheme,
-  CssBaseline,
-  GlobalStyles,
-  ThemeProvider,
-} from "@mui/material";
-
-const theme = createTheme({
-  typography: {
-    fontFamily: "'Cactus Classical Serif', serif",
-  },
-});
 const App: React.FC = () => {
-  return (
-    // <ThemeProvider theme={theme}>
-    //   <CssBaseline />
-    <MainLayout />
-    // </ThemeProvider>
-  );
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <SplashScreen />;
+  }
+
+  return <RouterProvider router={router} />;
 };
 
 export default App;

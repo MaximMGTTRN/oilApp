@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import "./ClatalogMenu.css";
+import { Link } from "react-router-dom"; // Используем Link из react-router-dom
 
 const menuData = [
   {
@@ -47,7 +48,7 @@ const CatalogMenu = () => {
       <div className="catalog-menu-content">
         {menuData.map((menu) => (
           <div key={menu.categoryName} className="catalog-menu-item">
-            <Link href={menu.link} className="catalog-menu-category" underline="none">
+            <Link to={menu.link} className="catalog-menu-category">
               <Typography
                 component="div"
                 fontWeight="bold"
@@ -59,7 +60,7 @@ const CatalogMenu = () => {
             </Link>
             <div className="catalog-menu-products">
               {menu.products.map((product) => (
-                <Link key={product.name} href={product.link} className="catalog-menu-product" underline="none">
+                <Link key={product.name} to={product.link} className="catalog-menu-product">
                   <Typography variant="body2" component="div" color="textSecondary"
                     sx={{ "&:hover": { color: "rgb(89, 89, 89)", cursor: "pointer" } }}
                   >

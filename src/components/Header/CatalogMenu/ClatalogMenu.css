@@ -30,6 +30,7 @@
 }
 
 .catalog-menu-category {
+  text-decoration: none;
   font-weight: 500;
   color: black;
   margin-bottom: 10px;
@@ -42,6 +43,7 @@
 }
 
 .catalog-menu-product {
+  text-decoration: none;
   font-weight: normal;
   color: black;
   margin-left: 10px;

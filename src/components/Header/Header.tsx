@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./Header.css";
 import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import CatalogMenu from "./CatalogMenu/ClatalogMenu";
+import "./Header.css";
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
       <div className="header-content">
         <div className="nav-logo">
           <Link to="/">
-            <img className="nav-logo-img" src={"public/newLogoNoText.png"} alt="Logo" />
+            <img className="nav-logo-img" src={"/newLogoNoText.png"} alt="Logo" />
           </Link>
         </div>
         <nav>
