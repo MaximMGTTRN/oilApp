@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from '../pages/Home/Home';
-import AboutUs from '../pages/AboutUs';
-import Catalog from '../pages/Catalog';
+import AboutUs from '../pages/AboutUs/AboutUs';
+import Catalog from '../pages/Catalog/Catalog';
 import Contacts from '../pages/Contacts/Contacts';
+import Cooperation from '../pages/Cooperation/Cooperation';
 
 //todo 
 const AppRouter: React.FC = () => {
@@ -11,13 +12,16 @@ const AppRouter: React.FC = () => {
     <Routes>
       <Route path="/" element={<>
         <Home />
-        <AboutUs />
-        <Catalog />
+        <AboutUs text='О нас' colorStyle={'colorStyle1'} />
+        <AboutUs text='Раздел 2' colorStyle={'colorStyle2'} />
+        <AboutUs text='Раздел 3' colorStyle={'colorStyle1'} />
+
       </>
       } />
-      <Route path="/about-us" element={<AboutUs />} />
       <Route path="/catalog" element={<Catalog />} />
       <Route path="/contacts" element={<Contacts />} />
+      <Route path="/cooperation" element={<Cooperation />} />
+      <Route path='*' element={<Navigate to="/" replace />} />
     </Routes>
   );
 };

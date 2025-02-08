@@ -1,21 +1,27 @@
 .header {
-  width: 100%;
-  background: linear-gradient(to bottom right, #f6f6fd, #e7e7ee);
-  padding: 10px 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-height: 30px;
-  position: sticky;
+  width: 100vw;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  background-color: transparent; /* Прозрачный при заходе */
+  color: black;
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный при скролле */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .nav-list {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -30,10 +36,25 @@
 
 .nav-list a {
   text-decoration: none;
-  color: red;
+  color: black;
   font-weight: bold;
 }
 
 .nav-list a:hover {
-  color: darkred;
+  color: rgb(102, 107, 113);
+  cursor: "pointer"
+}
+
+.header-content{
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+
+.nav-logo-img{
+  max-width: 50px;
+  max-height: 50px;
 }

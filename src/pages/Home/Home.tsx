@@ -1,5 +1,5 @@
-import './Home.css';
 import React from 'react';
+import './Home.css';
 
 const Home: React.FC = () => {
   return (
@@ -9,7 +9,12 @@ const Home: React.FC = () => {
         Your browser does not support the video tag.
       </video>
       <div className="overlay">
-        <h1 className="title">LUBRICORE</h1>
+        <div className="fffff">
+          <h1 className="title">
+            <img className="title-logo" src='public/newLogo.png' />
+          </h1>
+          <div className="title-dop">Производство синтетических смазочных материалов специального назначения</div>
+        </div>
       </div>
     </div>
   );

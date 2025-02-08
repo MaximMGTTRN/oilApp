@@ -3,6 +3,7 @@ import SplashScreen from "../../components/SplashScreen/SplashScreen";
 import Header from "../../components/Header/Header";
 import PageBody from "../../components/PageBody/PageBody";
 import Footer from "../../components/Footer/Footer";
+import "./MainLayout.css";
 
 const MainLayout: React.FC = () => {
   const [loading, setLoading] = useState(true);
