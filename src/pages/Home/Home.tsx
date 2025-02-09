@@ -5,7 +5,7 @@ const Home: React.FC = () => {
   return (
     <div className="home-body">
       <video className="background-video" autoPlay loop muted>
-        <source src="backgroundGif.webm" type="video/webm" />
+        <source src="backgroundGif.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="overlay">

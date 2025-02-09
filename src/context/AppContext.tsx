@@ -8,6 +8,10 @@ interface AppContextType {
   handleSubmit: (e: React.FormEvent) => void;
   isSending: boolean;
   formData: any;
+  categoryTag: string;
+  productTag: string;
+  setCategoryTag: (value: string) => void;
+  setProductTag: (value: string) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -22,6 +26,8 @@ export const useAppContext = () => {
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [categoryTag, setCategoryTag] = useState('');
+  const [productTag, setProductTag] = useState('');
 
   const [formData, setFormData] = useState({
     name: "",
@@ -65,7 +71,11 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         handleChange,
         handleSubmit,
         isSending,
-        formData
+        formData,
+        categoryTag,
+        productTag,
+        setCategoryTag,
+        setProductTag
       }}>
       {children}
     </AppContext.Provider>

@@ -1,4 +1,4 @@
-export const data = [
+export const data: IData[] = [
   {
     categoryName: "Масла для холодильных установок",
     tag: "holodilnie-ustanovki",
@@ -52,3 +52,13 @@ export const data = [
     ]
   },
 ];
+
+interface IData {
+  categoryName: string,
+  tag: string,
+  link: string,
+  products: {
+    name: string,
+    link: string
+  }[]
+}

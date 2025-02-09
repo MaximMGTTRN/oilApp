@@ -1,0 +1,15 @@
+.home-part {
+  width: 100%;
+  min-height: 500px;
+  padding: 30px 20px;
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+}
+
+.home-part-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}

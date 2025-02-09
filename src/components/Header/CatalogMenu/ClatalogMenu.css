@@ -1,3 +1,25 @@
+.catalog-menu-overlay {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  /* Полупрозрачный фон */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  z-index: 900;
+  /* Делаем его ниже Header */
+}
+
+.catalog-menu-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Основное меню */
 .catalog-menu {
   width: 100%;
   min-height: 200px;
@@ -8,13 +30,17 @@
   display: flex;
   justify-content: center;
   opacity: 0;
+  transform: translateY(-10px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .catalog-menu.show {
   opacity: 1;
+  transform: translateY(0);
 }
 
+/* Контент меню */
 .catalog-menu-content {
   width: 100%;
   max-width: 1200px;
@@ -46,5 +72,4 @@
   text-decoration: none;
   font-weight: normal;
   color: black;
-  margin-left: 10px;
 }

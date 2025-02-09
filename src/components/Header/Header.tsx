@@ -9,7 +9,7 @@ import "./Header.css";
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [catalogOpened, setCatalogOpened] = useState(false);
-  const { currentPath } = useLocationContext();
+  const { currentUrl } = useLocationContext();
   const location = useLocation();
 
   useEffect(() => {
@@ -29,10 +29,10 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isNeedBackground = currentPath !== "/" || scrolled || catalogOpened
+  const isNeedBackground = currentUrl !== "/" || scrolled || catalogOpened
 
   return (
-    <header className={`header ${isNeedBackground ? "scrolled" : ""}`}>
+    <header className={`header ${isNeedBackground ? "scrolled" : ""}`} style={{ zIndex: 1000 }}>
       <div className="header-content">
         <div className="nav-logo">
           <Link to="/">
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           </div>
         </nav>
       </div>
-      {catalogOpened ? <CatalogMenu /> : null}
+      {catalogOpened && <CatalogMenu onClose={() => setCatalogOpened(false)} />}
     </header>
   );
 };

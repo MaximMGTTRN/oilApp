@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useAppContext } from "./AppContext";
 
 interface LocationContextType {
-  currentPath: string;
+  currentUrl: string;
 }
 
 const LocationContext = createContext<LocationContextType | undefined>(undefined);
@@ -16,21 +17,40 @@ export const useLocationContext = () => {
 };
 
 export const LocationContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { setCategoryTag, setProductTag } = useAppContext();
   const location = useLocation();
-  const [currentPath, setCurrentPath] = useState(location.pathname);
-  // checkCurrentPage({ currentPath })
+  const [currentUrl, setCurrentUrl] = useState(location.pathname);
 
   useEffect(() => {
-    setCurrentPath(location.pathname);
+    setCurrentUrl(location.pathname);
+    checkCurrentPage(location.pathname, setCategoryTag, setProductTag);
   }, [location]);
 
   return (
-    <LocationContext.Provider value={{ currentPath }}>
+    <LocationContext.Provider value={{ currentUrl }}>
       {children}
     </LocationContext.Provider>
   );
 };
 
-// const checkCurrentPage = ({ currentPath }: { currentPath: string }) => {
-  
-// }
+const checkCurrentPage = (
+  path: string,
+  setCategoryTag: (value: string) => void,
+  setProductTag: (value: string) => void
+) => {
+  const parts = path.split("/").filter(Boolean); // Разбиваем URL на части и убираем пустые элементы
+
+  if (parts[0] === "catalog") {
+    if (parts.length > 1) {
+      setCategoryTag(parts[1]);
+    }
+    if (parts.length > 2) {
+      setProductTag(parts[2]);
+    } else {
+      setProductTag("");
+    }
+  } else {
+    setCategoryTag("");
+    setProductTag("");
+  }
+};
