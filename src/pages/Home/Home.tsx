@@ -4,7 +4,13 @@ import './Home.css';
 const Home: React.FC = () => {
   return (
     <div className="home-body">
-      <video className="background-video" autoPlay loop muted>
+      <video className="background-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        webkit-playsinline
+      >
         <source src="backgroundGif.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
