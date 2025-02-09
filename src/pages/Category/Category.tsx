@@ -63,12 +63,15 @@ export const ProductCard: React.FC<any> = ({ product }) => {
           <Typography gutterBottom variant="h6" component="div">
             {product.name}
           </Typography>
-          <div className='product-iso'>
-            {iso.map((item, index) => (
-              <Typography key={index} variant="body2" color="text.secondary">
-                {item}
-              </Typography>
-            ))}
+          <div className='product-iso-test'>
+            <div className='product-iso-title'>{'ISO VG: '}</div>
+            <div className='product-iso-items'>
+              {iso.map((item, index) => (
+                <Typography key={index} variant="body2" color="text.secondary" className='product-iso-item-test'>
+                  {item}
+                </Typography>
+              ))}
+            </div>
           </div>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             Lizards are a widespread group of squamate reptiles, with over 6,000

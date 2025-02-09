@@ -36,12 +36,18 @@
   }
 }
 
-.product-iso {
+.product-iso-test {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  padding-bottom: 10px;
 }
 
-.prouct-iso>p {
+.product-iso-test>p {
+  padding-right: 10px;
+}
+
+.product-iso-item-test {
+  font-weight: 400;
   padding-right: 10px;
 }

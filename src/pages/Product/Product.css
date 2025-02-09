@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   height: fit-content;
 }
 
@@ -24,7 +24,10 @@
 .product-title {
   font-size: 24px;
   font-weight: 700;
+}
 
+.product-category {
+  margin-bottom: 10px;
 }
 
 .product-information {
@@ -32,4 +35,30 @@
   padding: 20px;
   color: rgba(0, 0, 0, 0.6);
   text-align: right;
+}
+
+.product-iso {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  font-weight: 500;
+}
+
+.product-iso-items {
+  display: flex;
+}
+
+.product-iso-item {
+  font-weight: 400;
+  padding-right: 10px;
+}
+
+.product-iso-item:hover {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.product-iso-item-active {
+  text-decoration: underline;
 }
