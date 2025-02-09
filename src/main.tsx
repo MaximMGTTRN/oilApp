@@ -5,13 +5,16 @@ import CssBaseline from "@mui/material/CssBaseline";
 import App from "./App";
 import theme from "./theme";
 import { AppProvider } from "./context/AppContext";
+import { MediaProvider } from "./context/MediaContext";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <AppProvider>
-        <App />
+        <MediaProvider>
+          <App />
+        </MediaProvider>
       </AppProvider>
     </ThemeProvider>
   </StrictMode>

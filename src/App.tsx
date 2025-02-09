@@ -3,9 +3,12 @@ import { RouterProvider } from "react-router-dom";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
 import { router } from "./router/router";
 import { useAppContext } from "./context/AppContext";
+import { useMediaContext } from "./context/MediaContext";
 const App: React.FC = () => {
   const { isLoading, setIsLoading } = useAppContext();
   const [fadeOut, setFadeOut] = useState(false);
+  const { mediaLoaded } = useMediaContext();
+
 
   useEffect(() => {
     const timer = setTimeout(() => setFadeOut(true), 2500); // Начинаем скрытие через 2.5 сек
@@ -17,7 +20,7 @@ const App: React.FC = () => {
     };
   }, []);
 
-  if (isLoading) {
+  if (isLoading || !mediaLoaded) {
     return <SplashScreen fadeOut={fadeOut} />;
   }
 
