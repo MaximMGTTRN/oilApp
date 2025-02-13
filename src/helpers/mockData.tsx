@@ -1,6 +1,6 @@
 export const data: IData[] = [
   {
-    categoryName: "Масла для холодильных установок",
+    categoryName: "Масла для компрессоров холодильных установок",
     tag: "holodilnie-ustanovki",
     link: "/catalog/holodilnie-ustanovki",
     products: [
@@ -10,19 +10,19 @@ export const data: IData[] = [
     ]
   },
   {
-    categoryName: "Масла для вакуумных насосов",
-    link: "/catalog/vacuum",
-    tag: "vacuum",
-    products: [
-      { name: "LC VacuumOil VE", link: "/catalog/vacuum/VE" },
-    ]
-  },
-  {
     categoryName: "Масла для газовых компрессоров",
     link: "/catalog/compressors",
     tag: "compressors",
     products: [
       { name: "LC CompressGas PAG", link: "/catalog/compressors/PAG" },
+    ]
+  },
+  {
+    categoryName: "Масла для вакуумных насосов",
+    link: "/catalog/vacuum",
+    tag: "vacuum",
+    products: [
+      { name: "LC VacuumOil VE", link: "/catalog/vacuum/VE" },
     ]
   },
   {
@@ -35,20 +35,20 @@ export const data: IData[] = [
     ]
   },
   {
-    categoryName: "Цепные масла",
-    link: "/catalog/cepnie-masla",
-    tag: "cepnie-masla",
-    products: [
-      { name: "LC ChainOil SE", link: "/catalog/cepnie-masla/SE" },
-    ]
-  },
-  {
     categoryName: "Масла для промывки компрессоров",
     link: "/catalog/promivka-compressorov",
     tag: "promivka-compressorov",
     products: [
       { name: "LC CompressClean-WG", link: "/catalog/promivka-compressorov/WG" },
       { name: "LC CompressClean-WH", link: "/catalog/promivka-compressorov/WH" },
+    ]
+  },
+  {
+    categoryName: "Цепные масла",
+    link: "/catalog/cepnie-masla",
+    tag: "cepnie-masla",
+    products: [
+      { name: "LC ChainOil SE", link: "/catalog/cepnie-masla/SE" },
     ]
   },
 ];
