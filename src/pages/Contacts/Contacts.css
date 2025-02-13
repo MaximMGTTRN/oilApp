@@ -16,15 +16,16 @@
   padding-top: 30px;
 }
 
-.container {
+.contacts-container {
   display: flex;
   width: 100%;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 }
+
 @media screen and (max-width: 800px) {
-  .container {
-    flex-direction:column ;
+  .contacts-container {
+    flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: space-between;
