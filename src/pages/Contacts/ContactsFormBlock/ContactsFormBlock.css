@@ -1,9 +1,37 @@
 .contact-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding-inline:50px;
+    padding-block: 70px;
     justify-content: center;
     min-width: 350px;
-    width: 500px;
-    border: 1px solid black;
+    width: 600px;
+    border-radius: 2%;
+    background-color: #bdd4d6a6;
+    text-align: center;
+    margin-right: 20px;
+}
+.checkbox{
+    display: flex;
+    text-align: start;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-form{
+        width: auto;
+        margin-right: 0px;
+        margin-inline: 10px;
+        margin-bottom: 50px
+    }
+}
+@media screen and (max-width: 450px) {
+    .contact-form{
+        width: auto;
+        padding-inline:10px;
+        padding-block: 50px;
+        margin-right: 0px;
+        margin-inline: 10px;
+        margin-bottom: 50px
+    }
 }
