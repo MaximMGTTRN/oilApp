@@ -37,7 +37,7 @@ export const MediaProvider: React.FC<any> = ({ children }) => {
         newLogo: 'newLogo.png',
         newLogoNoText: 'newLogoNoText.png',
       };
-      const backgroundGifPath = 'backgroundGif.mp4';
+      const backgroundGifPath = 'backgroundVideo.mp4';
   
       localStorage.setItem('images', JSON.stringify(loadedImages));
       localStorage.setItem('backgroundGif', backgroundGifPath);
