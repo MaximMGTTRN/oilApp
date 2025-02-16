@@ -7,8 +7,10 @@ import PageBody from "../../components/PageBody/PageBody";
 const Contacts: React.FC = () => {
   return (
     <PageBody >
-      <ContactsInfoBlock />
-      <ContactsFormBlock />
+      <div className="contacts-container">
+        <ContactsInfoBlock />
+        <ContactsFormBlock />
+      </div>
     </PageBody>
 
   );

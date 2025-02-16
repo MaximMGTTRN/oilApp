@@ -5,4 +5,14 @@
     justify-content: center;
     min-width: 350px;
     width: 500px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-info{
+        margin-bottom: 50px;
+        width: calc(100% - 20px);
+        margin-inline: 10px;
+    }
 }

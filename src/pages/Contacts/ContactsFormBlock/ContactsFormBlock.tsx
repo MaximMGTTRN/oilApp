@@ -1,58 +1,120 @@
-import React from "react";
-import { TextField, Button, Box, Typography } from "@mui/material";
-import { useAppContext } from "../../../context/AppContext";
+import { TextField, Button, Box, Typography, Checkbox, FormControlLabel, FormHelperText  } from "@mui/material";
+//import { useAppContext } from "../../../context/AppContext";
 import './ContactsFormBlock.css'
+import { Controller, useForm } from "react-hook-form";
+import { ContactsFormSchema, ContactsFormType } from "./shemaOfForm/ContactsFormShema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-interface IContactsFormBlockProps {
-
-}
 
 export const ContactsFormBlock = () => {
-  const { handleSubmit, handleChange, formData, isSending } = useAppContext();
+  //const { handleSubmit, handleChange, formData, isSending } = useAppContext();
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<ContactsFormType>({
+    resolver: zodResolver(ContactsFormSchema()),
+    defaultValues: {
+      name:"",
+      email:"",
+      message: "",
+      agree: false,
+    },
+  });
+  const ifOk = ({name,email,message}:ContactsFormType)=>{
+    console.log(name, email, message);
+  }
   return (
     <div className="contact-form">
-      <Typography variant="h6" gutterBottom>
+      <Typography style={{marginBottom:40, fontWeight: "bold"}} variant="h5" gutterBottom>
         Свяжитесь с нами
       </Typography>
-      <form onSubmit={handleSubmit}>
+      <form>
         <Box display="flex" flexDirection="column" gap={2}>
+        <Controller control={control} name="name" render={({field:{onChange, value}})=>(
           <TextField
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                backgroundColor: "white", 
+              },
+            }}
             label="Ваше имя"
             name="name"
             variant="outlined"
             required
             fullWidth
-            value={formData.name}
-            onChange={handleChange}
+            value={value}
+            onChange={onChange}
+            error={!!errors.name}
+            helperText={errors.name?.message}
           />
+        )}/>
+        <Controller control={control} name="email" render={({field:{onChange, value}})=>(
           <TextField
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                backgroundColor: "white", 
+              },
+            }}
             label="Ваш e-mail"
             name="email"
             variant="outlined"
-            type="email"
             required
             fullWidth
-            value={formData.email}
-            onChange={handleChange}
+            value={value}
+            onChange={onChange}
+            error={!!errors.email}
+            helperText={errors.email?.message}
           />
+        )}/>
+        <Controller control={control} name="message" render={({field:{onChange, value}})=>(
           <TextField
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                backgroundColor: "white",
+              },
+            }}
             label="Сообщение"
-            name="message"
-            variant="outlined"
             multiline
-            rows={4}
+            name="message"
+            minRows={2}
+            variant="outlined"
             required
             fullWidth
-            value={formData.message}
-            onChange={handleChange}
+            value={value}
+            onChange={onChange}
+            error={!!errors.message}
+            helperText={errors.message?.message}
           />
+        )}/>
+          <div className="checkbox">
+            <Controller control={control} name="agree" render={({field:{onChange, value}})=>(
+             <div>
+             <FormControlLabel
+               control={
+                 <Checkbox
+                   checked={value}
+                   onChange={(e) => onChange(e.target.checked)}
+                 />
+
+               }
+               label = "Нажимая кнопку “Отправить”, я даю согласие на обработку своих персональных данных и соглашаюсь с Условиями использования и Политикой конфиденциальности"
+             />
+             {errors && (
+               <FormHelperText style={{marginLeft:30}} error={true}>{errors.agree?.message}</FormHelperText>
+             )}
+           </div>
+            )}/>
+          </div>
           <Button
             type="submit"
             variant="contained"
-            color="primary"
-            disabled={isSending}
+            style={{ backgroundColor: "#247277", height: 65, marginBlock: 20 }}
+            disabled={errors.root===null}
+            onClick={handleSubmit(ifOk)}
           >
-            {isSending ? "Отправка..." : "Отправить"}
+            Отправить
+            {/* {isSending ? "Отправка..." : "Отправить"} */}
           </Button>
         </Box>
       </form>
