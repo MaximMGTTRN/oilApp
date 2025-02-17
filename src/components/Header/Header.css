@@ -12,10 +12,11 @@
   transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   background-color: transparent; /* Прозрачный при заходе */
   color: black;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .header.scrolled {
-  background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный при скролле */
+  background-color: rgba(255, 255, 255);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -42,10 +43,10 @@
 
 .nav-list a:hover {
   color: rgb(102, 107, 113);
-  cursor: "pointer"
+  cursor: "pointer";
 }
 
-.header-content{
+.header-content {
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -54,7 +55,25 @@
   padding: 16px;
 }
 
-.nav-logo-img{
+.nav-logo-img {
   max-width: 50px;
   max-height: 50px;
+}
+
+.nav-logo,
+.nav-callback-button-block {
+  width: 180px;
+}
+/* Глянуть что с этим стилем не так при разных размерах экрана */
+
+.nav-callback-button {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  text-align: right;
+}
+
+.nav-callback-button:hover {
+  color: rgb(102, 107, 113);
+  cursor: "pointer";
 }

@@ -1,31 +1,47 @@
-import { HomePart } from "../HomePart/HomePart"
-import "./AboutUs.css"
-export const AboutUs = ({ color = "#F5F5F5" }) => {
-  return (
-    <HomePart backgroundColor={color}>
-      <div className="about-us">
-        <div className="about-us-block">
-          <div className="about-us-block-title">О КОМПАНИИ</div>
-          <div className="about-us-block-text">ООО “Лубрикор” с 2022 года занимается разработкой отечественных аналогов импортных масел специального назначения. </div>
-          <div className="about-us-block-text">В 2024 году было запущено собственное производство и начат выпуск продукции в промышленных масштабах.</div>
-          <div className="about-us-block-text">Наша компания сосредоточена на создании высококачественных смазочных материалов, отвечающих современным требованиям и стандартам</div>
-        </div>
-        <div className="about-us-block img-block">
-          <img src="/oilBarell.jpg" alt="aboutUs" />
-        </div>
-        <div className="about-us-block img-block">
-        <img src="/oilTube.webp" alt="aboutUs" />
+import { HomePart } from "../HomePart/HomePart";
+import "./AboutUs.css";
+import "../../../helpers/Fonts.css";
 
+export const AboutUs = () => {
+  return (
+    <HomePart >
+      <div className="about-us">
+        <div className="jost-font-title about-us-title">О КОМПАНИИ</div>
+        <div className="about-us-text">
+          <span className=" about-us-text-important">ООО «ЛУБРИКОР»</span> с
+          2022 года занимается разработкой отечественных аналогов импортных
+          масел специального назначения. Наша компания сосредоточена на создании{" "}
+          <span className=" about-us-text-important">
+            высококачественных смазочных материалов
+          </span>
+          , отвечающих современным требованиям и стандартам. В 2024 году было
+          успешно запущено собственное производство, что позволило начать выпуск
+          продукции в промышленных масштабах.
         </div>
-        <div className="about-us-block">
-          <div className="about-us-block-title second-title">ИНДИВИДУАЛЬНЫЙ </div>
-          <div className="about-us-block-title second-title">ПОДХОД</div>
-          <div className="about-us-block-text lubricroe-text">
-            <span className="about-us-block-text-bold">Lubricore</span> - динамично развивающийся бренд, основополагающим принципом работы которого является клиентоориентированность.
-            Мы стремимся к созданию прочных, доверительных и долгосрочных отношений с нашими партнёрами.</div>
-          <div className="about-us-block-text">Ввиду уникальной специфики нашего направления, мы стремимся предоставлять решения, которые в полной мере соответствуют ожиданиям наших клиентов, а также превосходят их, обеспечивая переход на отечественные смазочные материалы.</div>
+        <div className="about-us-text">
+          Одним из ключевых направлений деятельности компании стало{" "}
+          <span className=" about-us-text-important">
+            сотрудничество с ведущими промышленными предприятиями химической
+            отрасли России.
+          </span>{" "}
+          Целью этого партнерства является разработка и налаживание производства
+          синтетических базовых масел группы API V, которые ранее
+          импортировались из-за рубежа. Благодаря совместным усилиям и
+          многочисленным лабораторным исследованиям, удалось достичь
+          стандартизации качества выпускаемого сырья, которое не уступает
+          зарубежным аналогам.
+        </div>
+        <div className="about-us-text">
+          Этот шаг имеет большое значение для импортозамещения в России,
+          особенно в условиях глобальных экономических изменений.{" "}
+          <span className=" about-us-text-important">
+            Компания способствует развитию отечественной химической
+            промышленности
+          </span>
+          , обеспечивая российские предприятия высококачественными смазочными
+          материалами.
         </div>
       </div>
     </HomePart>
-  )
-}
+  );
+};

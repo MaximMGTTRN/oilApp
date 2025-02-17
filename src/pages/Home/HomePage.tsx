@@ -1,15 +1,15 @@
-import { AboutUs } from "./AboutUs/AboutUs"
-import Home from "./Home"
-import { HomeCatalog } from "./HomeCatalog/HomeCatalog"
+import { AboutUs } from "./AboutUs/AboutUs";
+import { Advantages } from "./Advantages/Advantages";
+import Home from "./Home";
+import { OurPartners } from "./HomeCatalog/OurPartners";
 
 export const HomePage = () => {
   return (
     <>
       <Home />
       <AboutUs />
-      <HomeCatalog color='#F7F7F7' />
-      <HomeCatalog />
-      <HomeCatalog color='#F7F7F7' />
+      <OurPartners color="#F5F5F5" />
+      <Advantages />
     </>
-  )
-}
+  );
+};

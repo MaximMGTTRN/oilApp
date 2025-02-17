@@ -1,14 +1,14 @@
-import React from 'react';
-import './Home.css';
-import { useMediaContext } from '../../context/MediaContext';
+import React from "react";
+import "./Home.css";
+import { useMediaContext } from "../../context/MediaContext";
 
 const Home: React.FC = () => {
-
-  const {  images, backgroundGif } = useMediaContext();
+  const { images, backgroundGif } = useMediaContext();
 
   return (
     <div className="home-body">
-      <video className="background-video"
+      <video
+        className="background-video"
         autoPlay
         loop
         muted
@@ -19,11 +19,12 @@ const Home: React.FC = () => {
         Your browser does not support the video tag.
       </video>
       <div className="overlay">
-        <div className="fffff">
-          <h1 className="title">
-            <img className="title-logo" src={images.newLogo} />
-          </h1>
-          <div className="title-dop">Производство синтетических смазочных материалов специального назначения</div>
+        <div className="home-page-content">
+          <img className="home-page-logo" src={images.newLogo} />
+          <div className="home-page-title">
+            Производство синтетических смазочных материалов специального
+            назначения
+          </div>
         </div>
       </div>
     </div>

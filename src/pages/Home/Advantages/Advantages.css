@@ -1,0 +1,121 @@
+.advantages {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.advantages-title {
+  font-size: 42px;
+  color: #247277;
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  width: 100%;
+  text-align: center;
+}
+
+.advantages-block-title-logo-1 {
+  position: absolute;
+  left: calc((100vw - 1200px) / 2 - 100px);
+}
+.advantages-block-title-logo-2 {
+  position: absolute;
+  right: calc((100vw - 1200px) / 2 - 100px);
+}
+
+.advantages-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* Два равных столбца */
+  grid-gap: 10px;
+  grid-auto-rows: minmax(300px, auto);
+}
+
+.advantages-block {
+  padding: 20px;
+  /* border: 1px solid #e7e7ee; */
+}
+
+.advantages-block-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #247277;
+  width: 100%;
+}
+
+.advantage-1 {
+  text-align: justify;
+}
+.advantage-2 {
+  text-align: justify;
+}
+
+.client-control-title {
+  word-break: break-all;
+}
+
+.advantages-block-text-bold {
+  font-weight: 700;
+  width: fit-content;
+  height: fit-content;
+}
+
+.advantages-block-text {
+  font-size: 20px;
+  color: #000;
+  margin-top: 10px;
+}
+
+.img-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-block > img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  max-height: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 5%;
+}
+.advantages-important-text {
+  font-weight: 500;
+  color: #247277;
+}
+
+@media screen and (max-width: 800px) {
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .img-block > img {
+    max-width: 80%;
+    max-height: auto;
+  }
+
+  .second-title {
+    text-align: left;
+  }
+
+  .advantages-title {
+    font-size: 30px;
+  }
+
+  .advantages-block-title {
+    font-size: 20px;
+  }
+
+  .advantages-block-text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .advantages-block-title-logo-1,
+  .advantages-block-title-logo-2 {
+    display: none;
+  }
+}
