@@ -1,6 +1,5 @@
 .agreement {
     font-size: 23px;
-    width: 100%;
 }
 .first-level{
     text-transform: uppercase;
@@ -8,6 +7,7 @@
 .agreement-title {
     text-transform: uppercase;
     font-size: 42px;
+    font-weight: bold;
     color: #247277;
     text-align: center;
     display: block;
@@ -19,9 +19,14 @@ ol {
     list-style: none;
     counter-reset: li;
     padding-inline-start: 20px;
+    padding-left: 10px ;
+ }
+ ul{
+    padding-left: 10px ;
  }
  li{
     margin-block: 30px;
+    padding-right: 10px;
  }
  ol>li:before {
     counter-increment: li;
@@ -43,6 +48,12 @@ ol {
   }
 
   @media screen and (max-width: 426px) {
+    ul {
+        padding-left: 5px ;
+    }
+    ol {
+        padding-left: 5px ;
+     }
     .agreement-title {
       font-size: 25px;
     }
