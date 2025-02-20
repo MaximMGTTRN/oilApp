@@ -1,4 +1,5 @@
-import { TextField, Button, Box, Typography, Checkbox, FormControlLabel, FormHelperText  } from "@mui/material";
+import { TextField, Button, Box, Typography, Checkbox, FormControlLabel, FormHelperText } from "@mui/material";
+import { Link } from "react-router-dom";
 //import { useAppContext } from "../../../context/AppContext";
 import './ContactsFormBlock.css'
 import { Controller, useForm } from "react-hook-form";
@@ -98,7 +99,14 @@ export const ContactsFormBlock = () => {
                  />
 
                }
-               label = "Нажимая кнопку “Отправить”, я даю согласие на обработку своих персональных данных и соглашаюсь с Условиями использования и Политикой конфиденциальности"
+               label={
+                <Typography>
+                  Нажимая кнопку “Отправить”, я даю согласие на обработку своих персональных данных и соглашаюсь с{" "}
+                  <Link className="links" to="/user_agreement">Условиями использования</Link>{" "}
+                  и{" "}
+                  <Link className="links" to="/privacy_policy" >Политикой конфиденциальности</Link>.
+                </Typography>
+              }
              />
              {errors && (
                <FormHelperText style={{marginLeft:30}} error={true}>{errors.agree?.message}</FormHelperText>
