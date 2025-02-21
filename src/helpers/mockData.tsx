@@ -4,7 +4,23 @@ export const data: IData[] = [
     tag: "holodilnie-ustanovki",
     link: "/catalog/holodilnie-ustanovki",
     products: [
-      { name: "LC Frost SE", link: "/catalog/holodilnie-ustanovki/SE" },
+      {
+        name: "LC Frost SE",
+        link: "/catalog/holodilnie-ustanovki/SE",
+        characteristics: [
+          {
+            iso: 10, // Вязкость
+            photoUrl: 'url', // ссылка на картинку
+            pdfUrl: 'url', // ссылка на pdf file
+            canisterVolumes: [10, 20, 30], // объем канистр
+            barrelVolume: 100, // объем бочки
+            description: 'asdasdsdas', // описание - мб надо вынести отсюда
+            personalCharacteristics: [
+              { name: 'визуально', method: 'Визуально', value: 'Прозрачная жидкость без цвета или жёлтого цвета' }
+            ]
+          }
+        ]
+      },
       { name: "LC Frost AB", link: "/catalog/holodilnie-ustanovki/AB" },
       { name: "LC Frost PAG", link: "/catalog/holodilnie-ustanovki/PAG" },
     ]
@@ -59,6 +75,7 @@ interface IData {
   link: string,
   products: {
     name: string,
-    link: string
+    link: string,
+    characteristics?: any[]
   }[]
 }
