@@ -3,24 +3,32 @@ import { RouterProvider } from "react-router-dom";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
 import { router } from "./router/router";
 import { useAppContext } from "./context/AppContext";
-import { useMediaContext } from "./context/MediaContext";
 const App: React.FC = () => {
   const { isLoading, setIsLoading } = useAppContext();
   const [fadeOut, setFadeOut] = useState(false);
-  const { mediaLoaded } = useMediaContext();
-
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setFadeOut(true), 2500); // Начинаем скрытие через 2.5 сек
-    const removeSplash = setTimeout(() => setIsLoading(false), 3000); // Полностью скрываем через 3 сек
+    let timer = 0
+    let removeSplash = 0
+    const video = document.createElement("video");
+    video.src = "/backgroundVideoNew.mp4"; // Файл в public
+    video.preload = "auto";
+    video.oncanplaythrough = () => {
 
+      timer = setTimeout(() => setFadeOut(true), 1500); // Начинаем скрытие через 2.5 сек
+      removeSplash = setTimeout(() => setIsLoading(false), 2000); // Полностью скрываем через 3 сек
+      setVideoLoaded(true);
+    }
+
+    video.load();
     return () => {
       clearTimeout(timer);
       clearTimeout(removeSplash);
     };
   }, []);
 
-  if (isLoading || !mediaLoaded) {
+  if (isLoading || !videoLoaded) {
     return <SplashScreen fadeOut={fadeOut} />;
   }
 
