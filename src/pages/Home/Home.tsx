@@ -12,7 +12,7 @@ const Home: React.FC = () => {
         playsInline
         webkit-playsinline="true"
       >
-        <source src={'/backgroundVideoNew.mp4'} type="video/mp4" />
+        <source src={'/backgroundVideo.mp4'} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="overlay">
