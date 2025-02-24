@@ -15,11 +15,11 @@ const App: React.FC = () => {
     video.src = "/backgroundVideo.mp4"; // Файл в public
     video.preload = "auto";
     video.oncanplaythrough = () => {
-
-      timer = setTimeout(() => setFadeOut(true), 1500); // Начинаем скрытие через 2.5 сек
-      removeSplash = setTimeout(() => setIsLoading(false), 2000); // Полностью скрываем через 3 сек
       setVideoLoaded(true);
     }
+
+    timer = setTimeout(() => setFadeOut(true), 2500); // Начинаем скрытие через 2.5 сек
+    removeSplash = setTimeout(() => setIsLoading(false), 3000); // Полностью скрываем через 3 сек
 
     video.load();
     return () => {

@@ -5,7 +5,7 @@ import "../../../helpers/Fonts.css";
 export const Advantages = () => {
   return (
     <HomePart
-      //  maxWidth={"1300px"}
+    //  maxWidth={"1300px"}
     >
       <div className="advantages">
         <div className="advantages-title jost-font-title">
@@ -13,10 +13,13 @@ export const Advantages = () => {
         </div>
         <div className="advantages-grid">
           <div className="advantages-block advantage-1">
+            <div className="advantages-block-title-logo-1">
+              <img src="/shield.png" alt="aboutUs" />
+            </div>
             <div className="jost-font-title advantages-block-title">
               КОНТРОЛЬ КАЧЕСТВА
             </div>
-            <div className="advantages-block-title-logo-1">PNG</div>
+
             <div className="advantages-block-text">
               Мы уделяем особое внимание качеству выпускаемой продукции и
               реализуем{" "}
@@ -35,16 +38,19 @@ export const Advantages = () => {
             </div>
           </div>
           <div className="advantages-block img-block">
-            <img src="/oilBarell.jpg" alt="aboutUs" />
+            <img src="/advantage1.png" alt="aboutUs" />
           </div>
           <div className="advantages-block img-block">
-            <img src="/oilTube.webp" alt="aboutUs" />
+            <img src="/advantage2.png" alt="aboutUs" />
           </div>
           <div className="advantages-block advantage-2">
+            <div className="advantages-block-title-logo-2">
+              <img src="/handshake.png" alt="aboutUs" />
+            </div>
             <div className="advantages-block-title client-control-title">
               КЛИЕНТООРИЕНТИРОВАННОСТЬ
             </div>
-            <div className="advantages-block-title-logo-2">PNG</div>
+
             <div className="advantages-block-text lubricroe-text">
               <span className="advantages-block-text-bold">Lubricore</span> -
               динамично развивающийся бренд, основополагающим принципом работы

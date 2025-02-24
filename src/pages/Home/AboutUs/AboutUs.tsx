@@ -1,6 +1,6 @@
-import { HomePart } from "../HomePart/HomePart";
 import "./AboutUs.css";
 import "../../../helpers/Fonts.css";
+import { HomePart } from "../HomePart/HomePart";
 
 export const AboutUs = () => {
   return (
