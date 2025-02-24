@@ -12,7 +12,7 @@ const App: React.FC = () => {
     let timer = 0
     let removeSplash = 0
     const video = document.createElement("video");
-    video.src = "/backgroundVideoNew.mp4"; // Файл в public
+    video.src = "/backgroundVideo.mp4"; // Файл в public
     video.preload = "auto";
     video.oncanplaythrough = () => {
 
